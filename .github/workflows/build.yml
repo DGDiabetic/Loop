@@ -18,7 +18,4 @@ jobs:
 
       - name: Build LoopWorkspace
         run: |
-          xcodebuild -workspace LoopWorkspace.xcworkspace \
-                     -scheme LoopWorkspace \
-                     -configuration Release \
-                     CODE_SIGNING_ALLOWED=NO
+          xcodebuild -scheme Loop -workspace Loop.xcworkspace -configuration Release CODE_SIGNING_ALLOWED=NO
