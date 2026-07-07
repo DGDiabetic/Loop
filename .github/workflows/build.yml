@@ -16,6 +16,10 @@ jobs:
         with:
           xcode-version: latest
 
-      - name: Build LoopWorkspace
+      - name: Build Loop
         run: |
-          xcodebuild -scheme Loop -workspace Loop.xcworkspace -configuration Release CODE_SIGNING_ALLOWED=NO
+          xcodebuild \
+            -workspace Loop.xcworkspace \
+            -scheme Loop \
+            -configuration Release \
+            CODE_SIGNING_ALLOWED=NO
