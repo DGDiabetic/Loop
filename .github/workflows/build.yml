@@ -1,0 +1,24 @@
+name: Build Loop
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest
+
+      - name: Build LoopWorkspace
+        run: |
+          xcodebuild -workspace LoopWorkspace.xcworkspace \
+                     -scheme LoopWorkspace \
+                     -configuration Release \
+                     CODE_SIGNING_ALLOWED=NO
